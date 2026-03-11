@@ -25,9 +25,8 @@ Architecting and implementing automated data pipelines. Integration of Python an
 Implementation of a Transformer-based model for high-accuracy text classification, achieving a 94% success rate on sentiment evaluation tasks.
 
 ---
-
 Contact Information
 
-LinkedIn: [www.linkedin.com/in/basharmohamed9]
-GitHub: https://github.com/pasharmohamed
-Email: [pasharmohamed8@gmail.com]
+LinkedIn: [basharmohamed9](https://www.linkedin.com/in/basharmohamed9)
+GitHub: [pasharmohamed](https://github.com/pasharmohamed)
+Email: pasharmohamed8@gmail.com
