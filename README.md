@@ -19,7 +19,7 @@ Development of a Deep Learning model utilizing Convolutional Neural Networks (CN
 2. Workflow Automation (n8n)
 Architecting and implementing automated data pipelines. Integration of Python and JavaScript for dynamic reporting and process optimization.
 
-![Automation Project](./automation_flow.png)
+![Automation Project](./n8n_project.png)
 
 3. Sentiment Analysis (RoBERTa)
 Implementation of a Transformer-based model for high-accuracy text classification, achieving a 94% success rate on sentiment evaluation tasks.
