@@ -23,10 +23,10 @@
             height: 280px; 
             border-radius: 20px; 
             object-fit: cover; 
-            /* تم حذف الفلتر الباهت - الألوان الآن طبيعية */
             margin-bottom: 25px; 
             box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
             border: 2px solid #f9f9f9;
+            /* تم حذف الفلتر الرمادي نهائياً لظهور الألوان الأصلية */
         }
         .hero h1 { font-size: 3.5rem; margin: 10px 0; color: #111; }
         .hero .title { font-size: 1.4rem; color: var(--primary-color); font-weight: bold; margin-bottom: 10px; }
@@ -39,13 +39,13 @@
         .social-icons a:hover { color: var(--primary-color); }
 
         /* Sections General */
-        section { padding: 100px 10%; text-align: center; }
+        section { padding: 80px 10%; text-align: center; }
         h2 { font-size: 2.2rem; margin-bottom: 40px; color: #111; position: relative; }
         h2::after { content: ''; width: 40px; height: 3px; background: var(--primary-color); position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
         
         .card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 25px rgba(0,0,0,0.04); border: 1px solid #f2f2f2; margin-bottom: 30px; text-align: left; }
 
-        /* About & Skills */
+        /* Skills Tags */
         .tag { display: inline-block; background: #eef6ff; color: var(--primary-color); padding: 8px 16px; border-radius: 8px; font-size: 0.9rem; font-weight: 600; margin: 6px; border: 1px solid #ddecff; }
 
         /* Timeline (Experience) */
@@ -57,7 +57,7 @@
         .right { left: 50%; text-align: left; }
         .right::after { left: -10px; }
 
-        /* Projects */
+        /* Projects Grid */
         .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 20px; }
         .project-img { width: 100%; border-radius: 12px; margin-top: 15px; border: 1px solid #eee; }
 
@@ -66,7 +66,6 @@
             .container { width: 100%; padding-left: 70px; text-align: left; }
             .container::after { left: 21px; }
             .right { left: 0; }
-            .hero h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
@@ -87,23 +86,18 @@
         <img src="profile.jpg" alt="Bashar Mohamed" class="profile-img">
         <h1>Bashar Mohamed</h1>
         <p class="title">AI Engineer | Machine Learning Specialist | Automation Expert</p>
-        <p style="color: #888; font-size: 1.1rem;"><i class="fas fa-map-marker-alt"></i> Beni Suef, Egypt</p>
-        
         <div class="social-icons">
             <a href="https://www.linkedin.com/in/basharmohamed9" target="_blank"><i class="fab fa-linkedin"></i></a>
             <a href="https://github.com/pasharmohamed" target="_blank"><i class="fab fa-github"></i></a>
             <a href="mailto:pasharmohamed8@gmail.com"><i class="fas fa-envelope"></i></a>
         </div>
-
-        <a href="CV.pdf" download class="cv-btn">
-            <i class="fas fa-file-download"></i> Download CV
-        </a>
+        <a href="CV.pdf" download class="cv-btn"><i class="fas fa-file-download"></i> Download CV</a>
     </section>
 
     <section id="about">
         <h2>About Me</h2>
         <div class="card" style="text-align: center; max-width: 850px; margin: 0 auto;">
-            <p style="font-size: 1.1rem; color: #444;">I am an Artificial Intelligence student at Beni-Suef University. I specialize in building intelligent systems using Machine Learning, Deep Learning, and Business Automation tools like n8n to solve real-world problems.</p>
+            <p style="font-size: 1.1rem; color: #444;">Artificial Intelligence student at Beni-Suef University. Specialist in building intelligent systems, Deep Learning, and Business Automation using n8n.</p>
         </div>
     </section>
 
@@ -121,23 +115,20 @@
         <div class="timeline">
             <div class="container left">
                 <div class="card">
-                    <h3 style="color: var(--primary-color); margin: 0;">Digital Egypt Pioneers Initiative (DEPI)</h3>
-                    <p style="font-weight: bold; margin: 5px 0;">Machine Learning Track</p>
-                    <p style="color: #888; font-size: 0.85rem;">Nov 2025 - July 2026 (Expected)</p>
+                    <h3 style="color: var(--primary-color);">Digital Egypt Pioneers Initiative (DEPI)</h3>
+                    <p>Machine Learning Track | Nov 2025 - July 2026</p>
                 </div>
             </div>
             <div class="container right">
                 <div class="card">
-                    <h3 style="color: var(--primary-color); margin: 0;">AI Virtual Intern</h3>
-                    <p style="font-weight: bold; margin: 5px 0;">Syntecxhub</p>
-                    <p style="color: #888; font-size: 0.85rem;">Feb 2026 - Present</p>
+                    <h3 style="color: var(--primary-color);">AI Virtual Intern</h3>
+                    <p>Syntecxhub | Feb 2026 - Present</p>
                 </div>
             </div>
             <div class="container left">
                 <div class="card">
-                    <h3 style="color: var(--primary-color); margin: 0;">Automation Training</h3>
-                    <p style="font-weight: bold; margin: 5px 0;">My-Communication (n8n)</p>
-                    <p style="color: #888; font-size: 0.85rem;">2025</p>
+                    <h3 style="color: var(--primary-color);">Automation Training</h3>
+                    <p>My-Communication (n8n) | 2025</p>
                 </div>
             </div>
         </div>
@@ -148,30 +139,32 @@
         <div class="projects-grid">
             <div class="card">
                 <h3>Brain Tumor Classification</h3>
-                <p>Medical imaging analysis using CNNs to classify MRI scans with high accuracy (Graduation Project).</p>
+                <p>Medical imaging analysis using CNNs to classify MRI scans (Graduation Project).</p>
                 <img src="brain_project.png" class="project-img">
             </div>
             <div class="card">
                 <h3>Process Automation (n8n)</h3>
-                <p>Building scalable enterprise workflows for automated data reporting and management.</p>
+                <p>Scalable enterprise workflows for automated data management.</p>
                 <img src="n8n_project.png" class="project-img">
             </div>
         </div>
     </section>
 
     <section id="education">
-        <h2>Education & Certifications</h2>
+        <h2>Education</h2>
         <div class="card">
             <h3 style="color: var(--primary-color);">B.Sc. in Artificial Intelligence</h3>
             <p><strong>Beni-Suef University</strong> | 2022 - 2026</p>
             <p>Major: Artificial Intelligence and Data Science.</p>
         </div>
-        
+    </section>
+
+    <section id="certifications" style="background: var(--bg-gray);">
+        <h2>Licenses & Certifications</h2>
         <div class="card">
-            <h3 style="color: var(--primary-color); margin-bottom: 20px;">Licenses & Certifications</h3>
             <p><i class="fas fa-star" style="color: var(--primary-color); margin-right: 10px;"></i> <strong>HCIA-AI v4.0</strong> - Huawei Certified</p>
             <p><i class="fas fa-star" style="color: var(--primary-color); margin-right: 10px;"></i> <strong>Python for Data Science</strong> - ITI (Mahara-Tech)</p>
-            <p><i class="fas fa-star" style="color: var(--primary-color); margin-right: 10px;"></i> <strong>AI Certified Specialist</strong> - NTI Training</p>
+            <p><i class="fas fa-star" style="color: var(--primary-color); margin-right: 10px;"></i> <strong>AI Specialist</strong> - NTI Training</p>
             <p><i class="fas fa-star" style="color: var(--primary-color); margin-right: 10px;"></i> <strong>Huawei ICT Competition 2025</strong> - Preliminary Winner</p>
         </div>
     </section>
