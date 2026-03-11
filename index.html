@@ -3,108 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bashar Mohamed | AI & Machine Learning Engineer</title>
+    <title>Bashar Mohamed | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        :root { --primary-color: #3b71fe; --text-dark: #1a1a1a; --text-light: #666; --bg-gray: #f8f9fa; }
         * { scroll-behavior: smooth; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: #fafafa; color: #333; line-height: 1.6; }
-        nav { position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.98); display: flex; justify-content: center; padding: 15px; gap: 20px; z-index: 1000; border-bottom: 1px solid #eee; }
-        nav a { text-decoration: none; color: #555; font-weight: 500; transition: 0.3s; font-size: 0.95rem; }
-        nav a:hover { color: #007bff; }
-        .contact-link { background: #007bff; color: white !important; padding: 5px 15px; border-radius: 20px; }
-        section { padding: 80px 20px; max-width: 900px; margin: 0 auto; }
-        h2 { font-size: 2rem; text-align: center; margin-bottom: 40px; color: #1a1a1a; position: relative; }
-        h2::after { content: ''; width: 50px; height: 3px; background: #007bff; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
-        .card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); border: 1px solid #efefef; margin-bottom: 20px; transition: 0.3s; }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 6px 25px rgba(0,0,0,0.08); }
-        .card h3 { margin: 0 0 10px 0; color: #007bff; }
-        .date { color: #888; font-size: 0.85rem; font-weight: bold; display: block; margin-bottom: 5px; }
-        .hero { text-align: center; padding-top: 140px; background: white; border-bottom: 1px solid #eee; padding-bottom: 60px; }
-        .profile-img { width: 160px; height: 160px; border-radius: 50%; filter: grayscale(100%); margin-bottom: 20px; border: 4px solid #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.1); object-fit: cover; }
-        .project-img { width: 100%; border-radius: 8px; margin-top: 15px; border: 1px solid #eee; }
-        .tag { background: #e7f3ff; color: #007bff; padding: 4px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: bold; margin-right: 5px; display: inline-block; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: #fff; color: var(--text-dark); line-height: 1.6; }
+
+        /* Navigation */
+        header { position: fixed; top: 0; width: 100%; background: #fff; display: flex; justify-content: space-between; align-items: center; padding: 15px 8%; z-index: 1000; border-bottom: 1px solid #eee; }
+        .logo { font-size: 1.4rem; font-weight: bold; color: var(--primary-color); text-decoration: none; }
+        nav a { text-decoration: none; color: var(--text-light); font-weight: 500; margin-left: 25px; transition: 0.3s; font-size: 0.9rem; }
+        nav a:hover { color: var(--primary-color); }
+        .contact-btn { background: var(--primary-color); color: white !important; padding: 8px 22px; border-radius: 25px; }
+
+        /* Hero Section */
+        .hero { padding: 140px 20px 60px; text-align: center; }
+        .profile-img { width: 220px; height: 280px; border-radius: 20px; object-fit: cover; filter: grayscale(100%); margin-bottom: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .hero h1 { font-size: 3.2rem; margin: 10px 0; }
+        .hero .title { font-size: 1.3rem; color: var(--primary-color); font-weight: bold; margin-bottom: 10px; }
+        .hero .location { color: var(--text-light); margin-bottom: 25px; }
+        .social-icons a { font-size: 1.5rem; color: var(--text-light); margin: 0 12px; transition: 0.3s; }
+        .social-icons a:hover { color: var(--primary-color); }
+        .cv-btn { display: inline-flex; align-items: center; gap: 10px; background: var(--primary-color); color: white; text-decoration: none; padding: 12px 30px; border-radius: 30px; margin-top: 30px; font-weight: bold; box-shadow: 0 4px 15px rgba(59, 113, 254, 0.3); transition: 0.3s; }
+        .cv-btn:hover { transform: translateY(-3px); }
+
+        /* Sections General */
+        section { padding: 80px 10%; }
+        h2 { font-size: 2.2rem; text-align: center; margin-bottom: 50px; }
+        .card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); border: 1px solid #f0f0f0; margin-bottom: 25px; }
+
+        /* Skills Tags */
+        .skill-cat { margin-bottom: 20px; text-align: left; }
+        .skill-cat h3 { font-size: 1.1rem; color: var(--primary-color); }
+        .tag { display: inline-block; background: #eef4ff; color: var(--primary-color); padding: 6px 14px; border-radius: 8px; font-size: 0.85rem; font-weight: 600; margin: 5px; }
+
+        /* Timeline (Experience) */
+        .timeline { position: relative; max-width: 1200px; margin: 0 auto; }
+        .timeline::after { content: ''; position: absolute; width: 2px; background: #eee; top: 0; bottom: 0; left: 50%; }
+        .container { padding: 10px 40px; position: relative; width: 50%; }
+        .container::after { content: ''; position: absolute; width: 16px; height: 16px; right: -8px; background: white; border: 3px solid var(--primary-color); top: 15px; border-radius: 50%; z-index: 1; }
+        .left { left: 0; } .right { left: 50%; }
+        .right::after { left: -8px; }
+        .timeline-content { padding: 20px; background: white; border-radius: 12px; border: 1px solid #eee; position: relative; }
+        .timeline-content h3 { margin: 0; font-size: 1.1rem; color: var(--text-dark); }
+        .timeline-content span { color: var(--primary-color); font-size: 0.85rem; font-weight: 600; }
+
+        /* Projects Grid */
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .project-card { background: #fff; padding: 25px; border-radius: 15px; border: 1px solid #f0f0f0; text-align: left; transition: 0.3s; }
+        .project-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .github-link { display: inline-flex; align-items: center; gap: 8px; background: #333; color: white; text-decoration: none; padding: 8px 15px; border-radius: 8px; font-size: 0.85rem; margin-top: 15px; }
+
+        /* Education & Certs */
+        .cert-item { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
+        .cert-item i { color: var(--primary-color); font-size: 1.2rem; }
+
+        @media (max-width: 768px) {
+            .timeline::after { left: 31px; }
+            .container { width: 100%; padding-left: 70px; padding-right: 25px; }
+            .container::after { left: 23px; }
+            .right { left: 0; }
+            h1 { font-size: 2.2rem !important; }
+        }
     </style>
 </head>
 <body>
 
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#education">Education</a>
-        <a href="mailto:pasharmohamed8@gmail.com" class="contact-link">Contact</a>
-    </nav>
+    <header>
+        <a href="#" class="logo">Bashar Mohamed</a>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="mailto:pasharmohamed8@gmail.com" class="contact-btn">Contact</a>
+        </nav>
+    </header>
 
     <section id="home" class="hero">
         <img src="profile.jpg" alt="Bashar Mohamed" class="profile-img">
         <h1>Bashar Mohamed</h1>
-        <p style="font-size: 1.3rem; color: #555;">AI Student & Machine Learning Engineer</p>
-        <p style="color: #888;">Beni Suef, Egypt</p>
-        <div style="margin-top: 20px;">
-            <a href="https://www.linkedin.com/in/basharmohamed9" target="_blank" style="margin: 0 10px; color: #007bff; text-decoration: none; font-weight: bold;">LinkedIn</a>
-            <a href="https://github.com/pasharmohamed" target="_blank" style="margin: 0 10px; color: #333; text-decoration: none; font-weight: bold;">GitHub</a>
+        <p class="title">AI Engineer | Machine Learning Specialist | Automation Expert</p>
+        <p class="location">Beni Suef, Egypt</p>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/basharmohamed9" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/pasharmohamed" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="mailto:pasharmohamed8@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+        <a href="#" class="cv-btn"><i class="fas fa-download"></i> Download CV</a>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <p>I am a passionate AI student at Beni-Suef University, specializing in Machine Learning, Deep Learning, and Business Process Automation. I love turning complex data into actionable insights and building workflows that save time and effort.</p>
+        </div>
+        
+        <div class="card" style="margin-top: 50px;">
+            <h2 style="font-size: 1.5rem; margin-bottom: 30px;">Skills</h2>
+            <div class="skill-cat">
+                <h3>Programming & Cloud</h3>
+                <div class="tag">Python</div> <div class="tag">SQL</div> <div class="tag">GitHub</div> <div class="tag">Huawei Cloud</div> <div class="tag">Power BI</div>
+            </div>
+            <div class="skill-cat">
+                <h3>AI & Machine Learning</h3>
+                <div class="tag">Machine Learning</div> <div class="tag">Deep Learning (CNN)</div> <div class="tag">NLP (RoBERTa)</div> <div class="tag">Computer Vision</div>
+            </div>
+            <div class="skill-cat">
+                <h3>Soft Skills</h3>
+                <div class="tag">Communication</div> <div class="tag">Teamwork</div> <div class="tag">Problem Solving</div> <div class="tag">Critical Thinking</div>
+            </div>
         </div>
     </section>
 
-    <section id="experience">
-        <h2>Professional Experience</h2>
-        
-        <div class="card">
-            <span class="date">Feb 2026 - Present</span>
-            <h3>AI Virtual Intern</h3>
-            <p><strong>Syntecxhub</strong></p>
-            <p>Focusing on end-to-end AI application development and model deployment.</p>
-        </div>
-
-        <div class="card">
-            <span class="date">Nov 2025</span>
-            <h3>AI Certified Trainee</h3>
-            <p><strong>National Telecommunication Institute (NTI) & Huawei</strong></p>
-            <p>Earned HCIA-AI v4.0 certification and specialized in Huawei Cloud AI services.</p>
-        </div>
-
-        <div class="card">
-            <span class="date">Sep 2025</span>
-            <h3>Python Developer Trainee</h3>
-            <p><strong>ITI (Mahara-Tech)</strong></p>
-            <p>Intensive training on Python for Data Science and Machine Learning applications.</p>
+    <section id="experience" style="background: var(--bg-gray);">
+        <h2>Experience</h2>
+        <div class="timeline">
+            <div class="container left">
+                <div class="timeline-content">
+                    <span>Feb 2026 - Present</span>
+                    <h3>AI Virtual Intern</h3>
+                    <p>Syntecxhub</p>
+                </div>
+            </div>
+            <div class="container right">
+                <div class="timeline-content">
+                    <span>Aug 2025 - Present</span>
+                    <h3>n8n Automation Training</h3>
+                    <p>My-Communication - Internship</p>
+                </div>
+            </div>
+            <div class="container left">
+                <div class="timeline-content">
+                    <span>Nov 2025</span>
+                    <h3>AI Certified Trainee</h3>
+                    <p>NTI & Huawei (HCIA-AI v4.0)</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <section id="projects">
-        <h2>Featured Projects</h2>
-        
-        <div class="card">
-            <h3>Brain Tumor Classification (Graduation Project)</h3>
-            <p>Using CNNs for high-accuracy medical diagnosis. A key project in my AI degree at Beni-Suef University.</p>
-            <img src="brain_project.png" class="project-img">
-        </div>
-
-        <div class="card">
-            <h3>Workflow Automation (n8n)</h3>
-            <p>Building complex automation pipelines to optimize business reporting and data flow.</p>
-            <img src="n8n_project.png" class="project-img">
-        </div>
-
-        <div class="card">
-            <h3>Sentiment Analysis Model</h3>
-            <p><span class="tag">RoBERTa</span> Achieved 94% accuracy in text sentiment classification.</p>
+        <h2>Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>Brain Tumor Classification</h3>
+                <p>Medical imaging analysis using Deep Learning (CNNs) for MRI scan classification.</p>
+                <a href="#" class="github-link"><i class="fab fa-github"></i> View on GitHub</a>
+            </div>
+            <div class="project-card">
+                <h3>Process Automation (n8n)</h3>
+                <p>Building scalable workflows for data reporting and automated lead management.</p>
+                <a href="#" class="github-link"><i class="fab fa-github"></i> View on GitHub</a>
+            </div>
         </div>
     </section>
 
     <section id="education">
-        <h2>Education & Competitions</h2>
+        <h2>Education</h2>
         <div class="card">
-            <h3>B.Sc. in Artificial Intelligence</h3>
-            <p><strong>Beni-Suef University</strong> | 2022 - 2026</p>
+            <h3>Bachelor's, AI and Data Science</h3>
+            <p style="color: var(--primary-color); font-weight: bold;">Beni-Suef University</p>
+            <p>2022 - 2026 (Expected)</p>
         </div>
+
+        <h2 style="margin-top: 60px;">Certifications</h2>
         <div class="card">
-            <h3>Huawei ICT Competition 2025-2026</h3>
-            <p>Passed the preliminary round in Cloud and AI tracks.</p>
+            <div class="cert-item"><i class="fas fa-certificate"></i> <div><strong>HCIA-AI v4.0 Certified</strong> <br> <small>Huawei</small></div></div>
+            <div class="cert-item"><i class="fas fa-certificate"></i> <div><strong>Python for Data Science</strong> <br> <small>ITI (Mahara-Tech)</small></div></div>
+            <div class="cert-item"><i class="fas fa-certificate"></i> <div><strong>Machine Learning Professional</strong> <br> <small>NTI</small></div></div>
         </div>
     </section>
 
-    <footer style="text-align: center; padding: 40px; color: #888;">
-        <p>&copy; 2026 Bashar Mohamed | AI & Automation Professional</p>
+    <section id="volunteering" style="background: var(--bg-gray);">
+        <h2>Volunteering</h2>
+        <div class="card" style="display: flex; gap: 20px; align-items: flex-start;">
+            <i class="fas fa-users" style="font-size: 2rem; color: var(--primary-color);"></i>
+            <div>
+                <h3>Beni Suef Students Ambassador</h3>
+                <p>Leading student activities and workshops to introduce AI and Cloud tools to fellow students.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 40px; border-top: 1px solid #eee;">
+        <p style="color: var(--text-light);">&copy; 2026 Bashar Mohamed. All rights reserved.</p>
     </footer>
 
 </body>
