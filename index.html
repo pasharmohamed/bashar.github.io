@@ -13,19 +13,26 @@
         /* Navigation */
         header { position: fixed; top: 0; width: 100%; background: #fff; display: flex; justify-content: space-between; align-items: center; padding: 15px 8%; z-index: 1000; border-bottom: 1px solid #eee; }
         .logo { font-size: 1.4rem; font-weight: bold; color: var(--primary-color); text-decoration: none; }
-        nav a { text-decoration: none; color: var(--text-light); font-weight: 500; margin-left: 25px; transition: 0.3s; font-size: 0.9rem; }
-        .contact-btn { background: var(--primary-color); color: white !important; padding: 8px 22px; border-radius: 25px; }
+        nav a { text-decoration: none; color: var(--text-light); font-weight: 500; margin-left: 25px; font-size: 0.9rem; }
+        .contact-btn { background: var(--primary-color); color: white !important; padding: 8px 22px; border-radius: 25px; text-decoration: none; }
 
         /* Hero Section */
-        .hero { padding: 160px 20px 80px; text-align: center; background: #fff; }
-        .profile-img { width: 220px; height: 280px; border-radius: 20px; object-fit: cover; filter: grayscale(100%); margin-bottom: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .hero { padding: 160px 20px 80px; text-align: center; }
+        .profile-img { 
+            width: 220px; 
+            height: 280px; 
+            border-radius: 20px; 
+            object-fit: cover; 
+            /* تم حذف الفلتر الباهت - الألوان الآن طبيعية */
+            margin-bottom: 25px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+            border: 2px solid #f9f9f9;
+        }
         .hero h1 { font-size: 3.5rem; margin: 10px 0; color: #111; }
         .hero .title { font-size: 1.4rem; color: var(--primary-color); font-weight: bold; margin-bottom: 10px; }
-        .hero .location { color: var(--text-light); margin-bottom: 30px; font-size: 1.1rem; }
         
-        /* زرار الـ CV - رجعتهولك زي الصورة بالظبط */
-        .cv-btn { display: inline-flex; align-items: center; gap: 12px; background: var(--primary-color); color: white; text-decoration: none; padding: 15px 40px; border-radius: 35px; font-weight: bold; font-size: 1.1rem; box-shadow: 0 5px 20px rgba(59, 113, 254, 0.3); transition: 0.3s; border: none; cursor: pointer; }
-        .cv-btn:hover { transform: translateY(-5px); background: #2a52be; box-shadow: 0 8px 25px rgba(59, 113, 254, 0.4); }
+        .cv-btn { display: inline-flex; align-items: center; gap: 12px; background: var(--primary-color); color: white; text-decoration: none; padding: 14px 35px; border-radius: 35px; font-weight: bold; font-size: 1.1rem; box-shadow: 0 5px 20px rgba(59, 113, 254, 0.3); transition: 0.3s; margin-top: 25px; }
+        .cv-btn:hover { transform: translateY(-5px); background: #2a52be; }
 
         .social-icons { margin-top: 25px; display: flex; justify-content: center; gap: 25px; }
         .social-icons a { font-size: 1.8rem; color: #777; transition: 0.3s; }
@@ -33,13 +40,15 @@
 
         /* Sections General */
         section { padding: 100px 10%; text-align: center; }
-        h2 { font-size: 2.2rem; margin-bottom: 50px; color: #111; }
+        h2 { font-size: 2.2rem; margin-bottom: 40px; color: #111; position: relative; }
+        h2::after { content: ''; width: 40px; height: 3px; background: var(--primary-color); position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
+        
         .card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 25px rgba(0,0,0,0.04); border: 1px solid #f2f2f2; margin-bottom: 30px; text-align: left; }
 
-        /* Skills Tags */
+        /* About & Skills */
         .tag { display: inline-block; background: #eef6ff; color: var(--primary-color); padding: 8px 16px; border-radius: 8px; font-size: 0.9rem; font-weight: 600; margin: 6px; border: 1px solid #ddecff; }
 
-        /* Timeline (Experience) - التنسيق التبادلي المظبوط */
+        /* Timeline (Experience) */
         .timeline { position: relative; max-width: 1000px; margin: 40px auto; }
         .timeline::after { content: ''; position: absolute; width: 2px; background: #eee; top: 0; bottom: 0; left: 50%; margin-left: -1px; }
         .container { padding: 10px 50px; position: relative; width: 50%; }
@@ -49,8 +58,8 @@
         .right::after { left: -10px; }
 
         /* Projects */
-        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; margin-top: 40px; }
-        .project-img { width: 100%; border-radius: 12px; margin-top: 20px; border: 1px solid #eee; }
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 20px; }
+        .project-img { width: 100%; border-radius: 12px; margin-top: 15px; border: 1px solid #eee; }
 
         @media (max-width: 768px) {
             .timeline::after { left: 31px; }
@@ -67,6 +76,7 @@
         <a href="#" class="logo">Bashar Mohamed</a>
         <nav>
             <a href="#about">About</a>
+            <a href="#skills">Skills</a>
             <a href="#experience">Experience</a>
             <a href="#projects">Projects</a>
             <a href="mailto:pasharmohamed8@gmail.com" class="contact-btn">Contact</a>
@@ -77,7 +87,7 @@
         <img src="profile.jpg" alt="Bashar Mohamed" class="profile-img">
         <h1>Bashar Mohamed</h1>
         <p class="title">AI Engineer | Machine Learning Specialist | Automation Expert</p>
-        <p class="location"><i class="fas fa-map-marker-alt"></i> Beni Suef, Egypt</p>
+        <p style="color: #888; font-size: 1.1rem;"><i class="fas fa-map-marker-alt"></i> Beni Suef, Egypt</p>
         
         <div class="social-icons">
             <a href="https://www.linkedin.com/in/basharmohamed9" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -85,7 +95,6 @@
             <a href="mailto:pasharmohamed8@gmail.com"><i class="fas fa-envelope"></i></a>
         </div>
 
-        <br>
         <a href="CV.pdf" download class="cv-btn">
             <i class="fas fa-file-download"></i> Download CV
         </a>
@@ -94,53 +103,57 @@
     <section id="about">
         <h2>About Me</h2>
         <div class="card" style="text-align: center; max-width: 850px; margin: 0 auto;">
-            <p style="font-size: 1.1rem; color: #444;">Artificial Intelligence student at Beni-Suef University. I specialize in building end-to-end intelligent systems using Machine Learning, Deep Learning, and Business Automation tools like n8n.</p>
-            <div style="margin-top: 30px;">
-                <div class="tag">Python</div> <div class="tag">Machine Learning</div> <div class="tag">n8n Automation</div>
-                <div class="tag">Deep Learning</div> <div class="tag">NLP (RoBERTa)</div> <div class="tag">Computer Vision</div>
-                <div class="tag">Huawei Cloud</div> <div class="tag">Power BI</div>
-            </div>
+            <p style="font-size: 1.1rem; color: #444;">I am an Artificial Intelligence student at Beni-Suef University. I specialize in building intelligent systems using Machine Learning, Deep Learning, and Business Automation tools like n8n to solve real-world problems.</p>
         </div>
     </section>
 
-    <section id="experience" style="background: var(--bg-gray);">
+    <section id="skills" style="background: var(--bg-gray);">
+        <h2>Skills</h2>
+        <div class="card" style="text-align: center;">
+            <div class="tag">Python</div> <div class="tag">Machine Learning</div> <div class="tag">n8n Automation</div>
+            <div class="tag">Deep Learning</div> <div class="tag">NLP (RoBERTa)</div> <div class="tag">Computer Vision</div>
+            <div class="tag">Huawei Cloud</div> <div class="tag">Power BI</div> <div class="tag">SQL</div> <div class="tag">GitHub</div>
+        </div>
+    </section>
+
+    <section id="experience">
         <h2>Experience</h2>
         <div class="timeline">
             <div class="container left">
                 <div class="card">
                     <h3 style="color: var(--primary-color); margin: 0;">Digital Egypt Pioneers Initiative (DEPI)</h3>
                     <p style="font-weight: bold; margin: 5px 0;">Machine Learning Track</p>
-                    <p style="color: #888; font-size: 0.9rem;">Nov 2025 - July 2026 (Expected)</p>
+                    <p style="color: #888; font-size: 0.85rem;">Nov 2025 - July 2026 (Expected)</p>
                 </div>
             </div>
             <div class="container right">
                 <div class="card">
                     <h3 style="color: var(--primary-color); margin: 0;">AI Virtual Intern</h3>
                     <p style="font-weight: bold; margin: 5px 0;">Syntecxhub</p>
-                    <p style="color: #888; font-size: 0.9rem;">Feb 2026 - Present</p>
+                    <p style="color: #888; font-size: 0.85rem;">Feb 2026 - Present</p>
                 </div>
             </div>
             <div class="container left">
                 <div class="card">
                     <h3 style="color: var(--primary-color); margin: 0;">Automation Training</h3>
                     <p style="font-weight: bold; margin: 5px 0;">My-Communication (n8n)</p>
-                    <p style="color: #888; font-size: 0.9rem;">2025</p>
+                    <p style="color: #888; font-size: 0.85rem;">2025</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="projects">
+    <section id="projects" style="background: var(--bg-gray);">
         <h2>Featured Projects</h2>
         <div class="projects-grid">
             <div class="card">
                 <h3>Brain Tumor Classification</h3>
-                <p>Medical imaging analysis using CNNs to classify MRI scans with high accuracy.</p>
+                <p>Medical imaging analysis using CNNs to classify MRI scans with high accuracy (Graduation Project).</p>
                 <img src="brain_project.png" class="project-img">
             </div>
             <div class="card">
-                <h3>Intelligent Automation</h3>
-                <p>Developing enterprise workflows using n8n for automated lead and data management.</p>
+                <h3>Process Automation (n8n)</h3>
+                <p>Building scalable enterprise workflows for automated data reporting and management.</p>
                 <img src="n8n_project.png" class="project-img">
             </div>
         </div>
@@ -149,15 +162,17 @@
     <section id="education">
         <h2>Education & Certifications</h2>
         <div class="card">
-            <h3>B.Sc. in Artificial Intelligence</h3>
+            <h3 style="color: var(--primary-color);">B.Sc. in Artificial Intelligence</h3>
             <p><strong>Beni-Suef University</strong> | 2022 - 2026</p>
-            <p>Focusing on AI algorithms and Neural Networks.</p>
+            <p>Major: Artificial Intelligence and Data Science.</p>
         </div>
+        
         <div class="card">
-            <h3>Licenses & Certifications</h3>
-            <p><i class="fas fa-star" style="color: var(--primary-color);"></i> HCIA-AI v4.0 - Huawei Certified</p>
-            <p><i class="fas fa-star" style="color: var(--primary-color);"></i> Python for Data Science - ITI (Mahara-Tech)</p>
-            <p><i class="fas fa-star" style="color: var(--primary-color);"></i> AI Specialist - NTI Training</p>
+            <h3 style="color: var(--primary-color); margin-bottom: 20px;">Licenses & Certifications</h3>
+            <p><i class="fas fa-star" style="color: var(--primary-color); margin-right: 10px;"></i> <strong>HCIA-AI v4.0</strong> - Huawei Certified</p>
+            <p><i class="fas fa-star" style="color: var(--primary-color); margin-right: 10px;"></i> <strong>Python for Data Science</strong> - ITI (Mahara-Tech)</p>
+            <p><i class="fas fa-star" style="color: var(--primary-color); margin-right: 10px;"></i> <strong>AI Certified Specialist</strong> - NTI Training</p>
+            <p><i class="fas fa-star" style="color: var(--primary-color); margin-right: 10px;"></i> <strong>Huawei ICT Competition 2025</strong> - Preliminary Winner</p>
         </div>
     </section>
 
